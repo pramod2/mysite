@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block head_title %}Welcome to my blog{% endblock %}</title>
+    </head>
+    <body>
+        <a href="{{ settings.HOST }}/blog"> Home </a>
+        <hr>
+        <h1>{% block title %}Welcome to my block{% endblock %}</h1>
+        <p>{%block meta %}{% endblock %}</p>
+        {% block content %}
+
+        {% endblock %}
+        {% block comment %}
+
+        {% endblock %}
+    </body>
+</html>
