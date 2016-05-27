@@ -1,28 +1,37 @@
 {% extends 'blog/base.html' %}
-{% block title %}Welcome to my blog{% endblock %}
 
-{% block content %}
+{% block main-body %}
+<h4><small>RECENT POSTS</small></h4>
+<hr>
 
-    <h2>Posts</h2>
-    {% if posts %}
-        <ul>
-        {% for post in posts %}
-            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>There are no posts.</p>
-    {% endif %}
+{% for post in recent_posts %}
+<div class="post">
+  <a href="{{post.get_absolute_url}}" class="deco-none"><div class="post-title">
+    <h2> {{ post.title }} </h2>
+  </div>
+  </a>
+  <div class="post-meta">
+    <h5><span class="glyphicon glyphicon-time"></span> Posted on: {{post.published_date}} </h5>
+    <h5>
+    {% for category in post.categories.all %}
+      <a href="{{ category.get_absolute_url }}">
+      <span class="label label-primary">{{ category.title }}</span>
+      </a>
+    {% endfor %}
+    </h5>
+  </div>
+  <div class="post-body">
+    <p>
+    {{ post.body | truncatewords:"10"  }}
+      <a href="{{ post.get_absolute_url }}">Read more</a>
+    </p>
+  </div>
+</div>
 
-    <h2>Categories</h2>
-    {% if categories %}
-        <ul>
-        {% for category in categories %}
-            <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>There are no posts.</p>
-    {% endif %}
-
+{% endfor %}
 {% endblock %}
+
+<div id="footer">
+  {% block footer %}
+  {% endblock %}
+</div>

@@ -1,0 +1,86 @@
+body {
+  font: 20px Montserrat, sans-serif;
+  line-height: 1.8;
+  color: #f5f6f7;
+}
+
+.navbar-default{
+  background-color:#99ccff !important;
+}
+
+p {
+  font-size: 16px;
+}
+
+.navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar-nav  li a:hover {
+  color: #1abc9c !important;
+}
+
+.navbar-nav {
+    margin-left:30px !important;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {height: 1500px}
+
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.post-body{
+  margin-top:5px;
+}
+
+a.deco-none {
+    color:#000000 !important;
+    text-decoration:none;
+
+}
+
+.main-body {
+  padding-right:0px !important;
+}
+
+.post a:hover{
+  color:#005580 !important;
+  text-decoration: none;
+}
+
+.post{
+  margin-bottom:15px;
+  padding: 5px 15px 5px 15px;
+  outline: 1px solid #99ccff;
+  border-radius:5px;
+  box-shadow: 3px 3px 3px #888888;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+  text-align:center;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+    margin-left:15px;
+  }
+  .row.content {height: auto;}
+}

@@ -1,19 +1,59 @@
 {% extends 'blog/base.html' %}
 {% block head_title %}{{ post.title }}{% endblock %}
-{% block title %}{{ post.title }}{% endblock %}
 
-{% block meta %}
-    Posted on: {{post.posted_date}} |
-    Categories:
-        {% for category in categories %}
-            {% if forloop.counter == 1 %}
-                <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
-            {% else %}
-                , <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
-            {% endif %}
-        {% endfor %}
-{% endblock %}
+{% block main-body %}
 
-{% block content %}
+<div class="post">
+  <div class="post-title">
+    <h2> {{ post.title }} </h2>
+  </div>
+
+  <div class="post-meta">
+    <h5><span class="glyphicon glyphicon-time"></span> Posted on: {{post.published_date}} </h5>
+    <h5>
+    {% for category in post.categories.all %}
+      <a href="{{ category.get_absolute_url }}">
+        <span class="label label-primary">{{ category.title }}</span>
+      </a>
+    {% endfor %}
+    </h5>
+  </div>
+  <br>
+  <div class="post-body">
+    <p>
     {{ post.body }}
+    </p>
+  </div>
+  <hr>
+</div>
+
+<div class="comment-container">
+  <h4>Leave a Comment:</h4>
+  <form role="form">
+    <div class="form-group">
+      <textarea class="form-control" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <br><br>
+
+  <p><span class="badge">2</span> Comments:</p><br>
+
+        <div class="row">
+
+        <div class="col-sm-12">
+          <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>
+          <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+        </div>
+
+        <div class="col-sm-12">
+          <h4>John Row <small>Sep 25, 2015, 8:25 PM</small></h4>
+          <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+        </div>
+      </div>
+
+</div>
+
 {% endblock %}

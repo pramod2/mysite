@@ -2,14 +2,16 @@
 {% block head_title %}Viewing category {{ category.title }}{% endblock %}
 {% block title %}{{ category.title }}{% endblock %}
 
-{% block content %}
-    {% if posts %}
-        <ul>
-        {% for post in posts %}
-            <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>There are no posts.</p>
-    {% endif %}
+{% block main-body %}
+{% if posts %}
+<h4><small>RECENT POSTS OF CATEGORY : {{ category.title }}</small></h4>
+<hr>
+<ul>
+  {% for post in posts %}
+  <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>There are no posts under this category.</p>
+{% endif %}
 {% endblock %}

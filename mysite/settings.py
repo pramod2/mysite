@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -61,6 +62,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'blog.context_processors.posts_and_categories_processor',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -78,12 +80,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'mysite',
-        'USER': 'mysite',
-        'PASSWORD': 'mysite',
+        'USER': 'root',
+        'PASSWORD': 'pramod',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 
