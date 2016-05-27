@@ -10,7 +10,7 @@ class Category(models.Model):
     title = models.CharField(max_length=100, db_index=True)
     slug = models.SlugField(max_length=100, db_index=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:
@@ -41,5 +41,5 @@ class Post(models.Model):
     def get_absolute_url(self):
         return ('view_blog_post', None, { 'slug': self.slug })
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
