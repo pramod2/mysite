@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysite',
-        'USER': 'root',
-        'PASSWORD': 'pramod',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'NAME': 'pramod$mysite',
+        'USER': 'pramod',
+        'PASSWORD': 'mysite-mysql',
+        'HOST': 'pramod.mysql.pythonanywhere-services.com',
+        #'PORT': '3306',
     }
 }
 
