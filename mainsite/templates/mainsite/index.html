@@ -1,0 +1,75 @@
+{% extends 'mainsite/base.html' %}
+{% load staticfiles %}
+
+{%block first-container %}
+  <div class="row">
+    <div class="col-sm-4 about">
+      <h3> About Me </h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="{% static 'global/images/profile_pic.jpg' %}"  class="img-circle" width="100" height="100"/>
+        </div>
+        <div class="col-sm-8">
+          <!--Description -->
+          <p>
+            I'm a Nepal-born Seattleite working as a software engineer at Microsoft.
+          </p>
+          <p>
+            I like to learn, explore, create, and laugh.
+          </p>
+          <p>
+          I believe in simplifying rather than complicating.
+          </p>
+          <p>
+            I enjoy existence, and existing.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-7 thought">
+      <h3> Thought of the Day</h3>
+      <i class="fa fa-quote-left" aria-hidden="true"></i>
+      <p>
+        Why do people compete with each other? Marx and Shakespeare provide two models for
+        understanding almost every kind of conflict.
+      </p>
+      <p>
+        According to Marx, people fight because they are different. The proletariat fights the bourgeoisie
+        because they have completely different ideas and goals (generated, for Marx, by their very different
+        material circumstances). The greater the differences, the greater the conflict.
+      </p>
+      <p>
+        To Shakespeare, by contrast, all combatants look more or less alike. It’s not at all clear why they
+        should be fighting, since they have nothing to fight about. Consider the opening line from Romeo and
+        Juliet: “Two households, both alike in dignity.” The two houses are alike, yet they hate each other.
+        They grow even more similar as the feud escalates. Eventually, they lose sight of why they started.
+        <i class="fa fa-quote-right" aria-hidden="true"></i>
+      </p>
+      <div class="thought-author">-Peter Thiel, Zero To One</div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block second-container %}
+  <h3> Projects </h3>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <a href="/blog">
+      <span class="glyphicon glyphicon-eye-open logo-small"></span>
+      <h4>Blog</h4>
+      <p>Read my latest posts..</p>
+      </a>
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-users logo-small" aria-hidden="true"></i>
+      <h4>Kandel Ancestry</h4>
+      <p>Search Kandels up to 7 generations ago. (Coming Soon..)</p>
+    </div>
+    <div class="col-sm-4">
+      <i class="fa fa-car logo-small" aria-hidden="true"></i>
+      <h4>Commute Time</h4>
+      <p>Commute time trends for your commute. (Coming Soon..)</p>
+    </div>
+  </div>
+{% endblock %}
