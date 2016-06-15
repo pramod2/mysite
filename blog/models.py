@@ -24,7 +24,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
-    body = HTMLField()
+    body = models.TextField()
     categories = models.ManyToManyField(Category)
     created_date = models.DateTimeField(db_index=True, auto_now_add=True)
     last_updated = models.DateTimeField(db_index=True, auto_now=True)
