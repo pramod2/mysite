@@ -12,6 +12,11 @@ p {
   font-size: 16px;
 }
 
+table, th, td {
+   border: 1px solid black;
+   border-collapse:collapse;
+}
+
 .navbar {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -83,4 +88,21 @@ footer {
     margin-left:15px;
   }
   .row.content {height: auto;}
+}
+
+
+.twitter-share-button[style], .g-plus{
+   vertical-align: text-bottom !important;
+}
+
+
+/* This gets Google to fall into place */
+
+.social {
+	font-size: 1px;
+}
+
+.twitter {
+  margin-right: 4px;
+  margin-left: 3px;
 }

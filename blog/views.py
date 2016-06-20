@@ -10,7 +10,8 @@ def post(request, slug):
     categories = post.categories.all()
     return render_to_response('blog/view_post.html', {
         'post': post,
-        'categories':categories
+        'categories':categories,
+        'post_full_url':request.build_absolute_uri(post.get_absolute_url())
     }, context_instance=RequestContext(request))
 
 def category(request, slug):

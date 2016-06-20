@@ -17,11 +17,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.http import HttpResponseRedirect
 from filebrowser.sites import site
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^', include('mainsite.urls')),
     url(r'^blog/', include('blog.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^grappelli/', include('grappelli.urls')), # grappelli URLS
     url(r'^admin/', include(admin.site.urls)),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
