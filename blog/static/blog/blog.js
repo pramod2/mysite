@@ -8,7 +8,6 @@ $(function() {
     //twitter share
     twitterShare(document, 'script', 'twitter-wjs');
 
-    //fbInit();
     //facebook share
     fbShare(document, 'script', 'facebook-jssdk');
 });
@@ -45,14 +44,5 @@ function fbShare(d, s, id) {
     js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
     fjs.parentNode.insertBefore(js, fjs);
-}
-
-
-function fbInit() {
-  FB.init({
-    appId      : '155550361524410',
-    xfbml      : true,
-    version    : 'v2.6'
-  });
 }
 
