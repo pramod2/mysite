@@ -38,23 +38,11 @@
 
     <div class="collapse navbar-collapse navbar-ex1-collapse">
 
-      <ul class="nav menubar navbar-nav">
-        <li><a href="#">/Nepal</a></li>
-        <li><a href="#">/Politics</a></li>
-        <li><a href="#">/Art</a></li>
-        <li class="dropdown">
-          <a data-toggle="dropdown" class="dropdown-toggle" href="#">Others
-          <b class="caret"></b>
-          </a>
-
-          <ul class="dropdown-menu">
-            <li><a href="#">Cooking</a></li>
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Fashion</a></li>
-          </ul>
-        </li>
+      <ul class="nav menubar navbar-right navbar-nav">
+        <li><a href="/">Main Site</a></li>
       </ul>
 
+      <!-- No Searchbar needed for now
       <div class="col-sm-3 col-md-3 pull-right searchbar">
         <form class="navbar-form" role="search">
           <div class="input-group">
@@ -65,12 +53,14 @@
           </div>
         </form>
       </div>
-
+      -->
     </div>
   </nav>
   <!-- Main Content (Including Side Nav)  -->
 
   <div class="row content">
+
+    <!-- Comment out side nav for now
     <div class="col-sm-3 sidenav">
       <h4>Posts</h4>
       {% if recent_posts %}
@@ -94,14 +84,12 @@
       <p>There are no categories.</p>
       {% endif %}
     </div>
-    <div class="col-sm-9 main-body">
+    -->
+    <div class="main-body">
       {% block main-body %} {% endblock %}
     </div>
 
   </div>
-  <footer class="row">
-  <p>Copyright: Pramod Kandel</p>
-  </footer>
 </div>
 
 </body>

@@ -16,7 +16,7 @@ def post(request, slug):
 
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    return render_to_response('blog/view_category.html', {
+    return render_to_response('blog/index.html', {
         'category': category,
-        'posts': Post.objects.filter(categories=category)[:5]
-    }, context_instance=RequestContext(request))
+        'recent_posts': Post.objects.filter(is_published=True).filter(categories=category).order_by('-published_date')[:5]
+    })

@@ -1,7 +1,15 @@
 {% extends 'blog/base.html' %}
 
 {% block main-body %}
-<h4><small>RECENT POSTS</small></h4>
+<h4>
+  <small>
+    {% if category %}
+      RECENT POSTS OF CATEGORY : {{ category.title }}
+    {% else %}
+      RECENT POSTS
+    {% endif %}
+  </small>
+</h4>
 <hr>
 
 {% for post in recent_posts %}
@@ -20,6 +28,7 @@
     {% endfor %}
     </h5>
   </div>
+  <hr>
   <div class="post-body">
     <p>
     {{ post.body | truncatewords:"10"  }}

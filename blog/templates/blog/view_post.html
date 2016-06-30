@@ -9,19 +9,10 @@
   </div>
 
   <div class="post-meta">
-    <h5><span class="glyphicon glyphicon-time"></span> Posted on: {{post.published_date}} </h5>
-    <h5>
-    {% for category in post.categories.all %}
-      <a href="{{ category.get_absolute_url }}">
-        <span class="label label-primary">{{ category.title }}</span>
-      </a>
-    {% endfor %}
-    </h5>
-  </div>
-  <hr>
-  <div class="social">
+        <div class="social pull-right">
     <!-- Facebook like button -->
     <span class="fb-like" data-href="{{post_full_url}}" data-layout="standard" data-action="like" data-show-faces="true"></span>
+
     <!-- Facebook share button -->
     <span class="fb-share-button" data-href="{{post_full_url}}" data-layout="button_count" data-mobile-iframe="true">
       <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
@@ -33,7 +24,19 @@
     </span>
     <!--G Plus Share button -->
     <span class="g-plus" data-action="share" data-annotation="none"></span>
+    </div>
+    <h5><span class="glyphicon glyphicon-time"></span> Posted on: {{post.published_date}} </h5>
+    <h5>
+    {% for category in post.categories.all %}
+      <a href="{{ category.get_absolute_url }}">
+        <span class="label label-primary">{{ category.title }}</span>
+      </a>
+    {% endfor %}
+
+    </h5>
   </div>
+  <hr>
+
   <br>
   <div class="post-body">
     <p>
@@ -42,6 +45,7 @@
   </div>
   <hr>
 </div>
+
 
 <div class="comment-container">
   <div class="fb-comments" data-href="{{full_url}}" data-numposts="5"></div>
