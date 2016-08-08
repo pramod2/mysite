@@ -24,6 +24,21 @@
                         {% endfor %}
 
                         </h5>
+                        <hr>
+                        <div class="social-buttons">
+
+                          <!-- Facebook like button -->
+                          <span class="fb-like" data-href="{{post_full_url}}" data-layout="standard" data-action="like" data-show-faces="true"></span>
+
+                          <div class="don-share" data-style="icons" data-bubbles="top" data-limit="4">
+                            <div class="don-share-total"></div>
+                            <div class="don-share-facebook"></div>
+                            <div class="don-share-twitter"></div>
+                            <div class="don-share-google"></div>
+                            <div class="don-share-linkedin"></div>
+                          </div>
+                        </div>
+
                       </div>
                   </div>
               </div>
@@ -35,20 +50,6 @@
 {% endblock %}
 
 {% block main-body %}
-
-<div class="social-buttons">
-
-  <!-- Facebook like button -->
-  <span class="fb-like" data-href="{{post_full_url}}" data-layout="standard" data-action="like" data-show-faces="true"></span>
-  <!-- Shocial shares -->
-  <ul class="share-buttons">
-    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{post_full_url}}&t={{post.title}}" target="_blank" title="Share on Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-    <li><a href="https://twitter.com/intent/tweet?source={{post_full_url}}&text={{post.title}}&via=pramodkandel" target="_blank" title="Tweet"><i class="fa fa-twitter-square fa-2x"></i></a></li>
-    <li><a href="https://plus.google.com/share?url={{post_full_url}}" target="_blank" title="Share on Google+"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-    <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={{post_full_url}}&title={{post.title}}&summary=&source=http%3A%2F%2Fpramod.pythonanywhere.com" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
-    <li><a href="mailto:info@pramodkandel.com?subject={{post.title}}&body=:%20{{post_full_url}}" target="_blank" title="Email"><i class="fa fa-envelope-square fa-2x"></i></a></li>
-  </ul>
-</div>
 
 <hr>
 

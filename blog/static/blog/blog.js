@@ -10,6 +10,9 @@ $(function() {
 
     //facebook share
     fbShare(document, 'script', 'facebook-jssdk');
+
+    //totalShares
+    totalShares();
 });
 
 
@@ -45,6 +48,15 @@ function fbShare(d, s, id) {
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
     fjs.parentNode.insertBefore(js, fjs);
 }
+
+
+function totalShares() {
+  var dr = document.createElement('script');
+  dr.type = 'text/javascript'; dr.async = true;
+  dr.src = '//share.donreach.com/buttons.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dr);
+}
+
 
 /*
 // Navigation Scripts to Show social shares on Scroll-Up

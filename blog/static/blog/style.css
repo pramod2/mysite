@@ -1,19 +1,7 @@
-ul.share-buttons{
-  list-style: none;
-  float:right;
+.don-share {
+float:right;
 }
 
-ul.share-buttons li{
-  display:inline;
-}
-
-/*
-.social-buttons{
-  position:absolute;
-  left:-300px;
-  top: 10px;
-}
-*/
 .post-body {
   text-align: justify;
 }
