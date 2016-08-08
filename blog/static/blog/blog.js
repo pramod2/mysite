@@ -46,3 +46,34 @@ function fbShare(d, s, id) {
     fjs.parentNode.insertBefore(js, fjs);
 }
 
+/*
+// Navigation Scripts to Show social shares on Scroll-Up
+jQuery(document).ready(function($) {
+    var MQL = 1170;
+
+    //primary navigation slide-in effect
+    if ($(window).width() > MQL) {
+        var headerHeight = $('.social-buttons').height();
+        $(window).on('scroll', {
+                previousTop: 0
+            },
+            function() {
+                var currentTop = $(window).scrollTop();
+                //check if user is scrolling up
+                if (currentTop < this.previousTop) {
+                    //if scrolling up...
+                    if (currentTop > 0 && $('.social-buttons').hasClass('is-fixed')) {
+                        $('.social-buttons').addClass('is-visible');
+                    } else {
+                        $('.social-buttons').removeClass('is-visible is-fixed');
+                    }
+                } else {
+                    //if scrolling down...
+                    $('.social-buttons').removeClass('is-visible');
+                    if (currentTop > headerHeight && !$('.social-buttons').hasClass('is-fixed')) $('.social-buttons').addClass('is-fixed');
+                }
+                this.previousTop = currentTop;
+            });
+    }
+});
+*/
