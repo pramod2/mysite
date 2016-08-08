@@ -27,16 +27,17 @@
                         <hr>
                         <div class="social-buttons">
 
-                          <!-- Facebook like button -->
-                          <span class="fb-like" data-href="{{post_full_url}}" data-layout="standard" data-action="like" data-show-faces="true"></span>
-
-                          <div class="don-share" data-style="icons" data-bubbles="top" data-limit="4">
+                          <div class="don-share" data-style="icons" data-bubbles="hover" data-limit="4">
                             <div class="don-share-total"></div>
                             <div class="don-share-facebook"></div>
                             <div class="don-share-twitter"></div>
                             <div class="don-share-google"></div>
                             <div class="don-share-linkedin"></div>
                           </div>
+
+                          <!-- Facebook like button -->
+                          <div class="fb-like" data-href="{{post_full_url}}" data-layout="standard" data-action="like" data-show-faces="true"></div>
+
                         </div>
 
                       </div>
@@ -50,8 +51,6 @@
 {% endblock %}
 
 {% block main-body %}
-
-<hr>
 
 <div class="post">
   <div class="post-body">
