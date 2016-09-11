@@ -20,3 +20,9 @@ def category(request, slug):
         'category': category,
         'recent_posts': Post.objects.filter(is_published=True).filter(categories=category).order_by('-published_date')[:5]
     })
+
+#hardcode the slug here, which should always be "about"
+def about_blog(request):
+    post = get_object_or_404(Post, slug="about")
+    return render_to_response('blog/about.html', {'post':post})
+
