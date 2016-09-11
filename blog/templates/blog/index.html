@@ -25,6 +25,7 @@
   </a>
   <div class="post-meta">
     <h5><span class="glyphicon glyphicon-time"></span> Posted on: {{post.published_date}} </h5>
+    <!-- Too early for categories. Add when there are a bunch of posts. Don't forget to comment out index
     <h5>
     {% for category in post.categories.all %}
       <a href="{{ category.get_absolute_url }}">
@@ -32,6 +33,7 @@
       </a>
     {% endfor %}
     </h5>
+    -->
   </div>
   <hr>
   <div class="post-body">

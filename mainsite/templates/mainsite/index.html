@@ -10,22 +10,7 @@
           <img src="{% static 'global/images/profile_pic.jpg' %}"  class="img-circle" width="100" height="100"/>
         </div>
         <div class="col-sm-8">
-          <!--Description -->
-          <p>
-            I'm a Nepal-born Seattleite working as a software engineer at Microsoft.
-          </p>
-          <p>
-            I like to learn, explore, create, and laugh.
-          </p>
-          <p>
-          I believe in simplifying rather than complicating.
-          </p>
-          <p>
-          I believe in peace, love, unity, and respect, and wish everyone did.
-          </p>
-          <p>
-            I enjoy existence, and existing.
-          </p>
+          {{about_me.body | safe}}
         </div>
       </div>
     </div>
@@ -33,23 +18,11 @@
     <div class="col-sm-7 thought">
       <h3> Thought of the Day</h3>
       <p>
-      <i class="fa fa-quote-left" aria-hidden="true"></i>
-        Why do people compete with each other? Marx and Shakespeare provide two models for
-        understanding almost every kind of conflict.
-      </p>
-      <p>
-        According to Marx, people fight because they are different. The proletariat fights the bourgeoisie
-        because they have completely different ideas and goals (generated, for Marx, by their very different
-        material circumstances). The greater the differences, the greater the conflict.
-      </p>
-      <p>
-        To Shakespeare, by contrast, all combatants look more or less alike. It’s not at all clear why they
-        should be fighting, since they have nothing to fight about. Consider the opening line from Romeo and
-        Juliet: “Two households, both alike in dignity.” The two houses are alike, yet they hate each other.
-        They grow even more similar as the feud escalates. Eventually, they lose sight of why they started.
+        <i class="fa fa-quote-left" aria-hidden="true"></i>
+          {{thought_of_the_day.body | safe}}
         <i class="fa fa-quote-right" aria-hidden="true"></i>
       </p>
-      <div class="thought-author">-Peter Thiel, Zero To One</div>
+      <div class="thought-author">-{{thought_of_the_day.author | safe}}</div>
     </div>
   </div>
 {% endblock %}
@@ -58,7 +31,7 @@
   <h3> Projects </h3>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <a href="/blog" target="_blank">
+      <a href="/blog">
       <span class="glyphicon glyphicon-eye-open logo-small"></span>
       <h4>Blog</h4>
       <p>Read my latest posts..</p>
