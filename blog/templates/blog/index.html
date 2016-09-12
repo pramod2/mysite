@@ -17,35 +17,38 @@
 </h4>
 <hr>
 
-{% for post in recent_posts %}
-<div class="post">
-  <a href="{{post.get_absolute_url}}" class="deco-none"><div class="post-title">
-    <h1> {{ post.title }} </h1>
-  </div>
-  </a>
-  <div class="post-meta">
-    <h5><span class="glyphicon glyphicon-time"></span> Posted on: {{post.published_date}} </h5>
-    <!-- Too early for categories. Add when there are a bunch of posts. Don't forget to comment out index
-    <h5>
-    {% for category in post.categories.all %}
-      <a href="{{ category.get_absolute_url }}">
-      <span class="label label-primary">{{ category.title }}</span>
+{% if not recent_posts %}
+  <p> Coming soon..</p>
+{% else %}
+  {% for post in recent_posts %}
+    <div class="post">
+      <a href="{{post.get_absolute_url}}" class="deco-none"><div class="post-title">
+        <h1> {{ post.title }} </h1>
+      </div>
       </a>
-    {% endfor %}
-    </h5>
-    -->
-  </div>
-  <hr>
-  <div class="post-body">
-    <p>
-    {{ post.body | truncatewords:"50"  | safe}}
-      <a href="{{ post.get_absolute_url }}">Read more</a>
-    </p>
-  </div>
-  <hr>
-</div>
-
-{% endfor %}
+      <div class="post-meta">
+        <h5><span class="glyphicon glyphicon-time"></span> Posted on: {{post.published_date}} </h5>
+        <!-- Too early for categories. Add when there are a bunch of posts. Don't forget to comment out index
+        <h5>
+        {% for category in post.categories.all %}
+          <a href="{{ category.get_absolute_url }}">
+          <span class="label label-primary">{{ category.title }}</span>
+          </a>
+        {% endfor %}
+        </h5>
+        -->
+      </div>
+      <hr>
+      <div class="post-body">
+        <p>
+        {{ post.body | truncatewords:"50"  | safe}}
+          <a href="{{ post.get_absolute_url }}">Read more</a>
+        </p>
+      </div>
+      <hr>
+    </div>
+  {% endfor %}
+{% endif %}
 {% endblock %}
 
 <div id="footer">
